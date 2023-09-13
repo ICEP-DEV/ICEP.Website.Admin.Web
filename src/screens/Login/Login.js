@@ -46,7 +46,9 @@ function Login() {
         const loginData =  await axios.post('http://localhost:3001/api/login',values)
     
         if(loginData.data.success === true){
-            navigate('/sanitaryInpection')
+            var userId = loginData.data.results[0].userId
+
+            navigate('/sampling_data',{state:{userId}})
         }
         else{
             console.log(loginData.data.message);
