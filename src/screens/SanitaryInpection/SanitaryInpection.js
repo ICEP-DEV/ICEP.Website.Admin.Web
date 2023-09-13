@@ -1,6 +1,6 @@
 
 import './SanitaryInpection.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 function SanitaryInpection() {
 
@@ -15,8 +15,9 @@ function SanitaryInpection() {
         observerLaundryActivity:""
     });
 
-    const [pitLatrine, setpitLatrine] = useState('')
-
+    useEffect(() => {
+        
+    })
     const handleChangeUpdate = e => {
         const { name, value } = e.target;
         setSanitaryInpectionItems(prevState => ({
@@ -24,6 +25,8 @@ function SanitaryInpection() {
             [name]: value
         }));
     }
+
+
 
     function senduseSanitaryInpectionSurvey(){
         console.log(SanitaryInpectionItems)

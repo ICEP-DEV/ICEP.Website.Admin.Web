@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './screens/Login/Login';
-import SanitaryInpection from './screens/Home/SanitaryInpection';
+import SanitaryInpection from './screens/SanitaryInpection/SanitaryInpection';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {

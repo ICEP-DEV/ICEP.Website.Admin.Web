@@ -30,23 +30,22 @@ function Login() {
 
     // set up login button using gmail account
     const onSuccess = async() => {
-        if (values.username == "" && values.password == "") {
+        if (values.username === "" && values.password == "") {
             console.log("All field should be filled")
             return;
         }
-        if (values.username == "") {
+        if (values.username === "") {
             console.log("Enter username")
             return;
         }
-        if (values.password == "") {
+        if (values.password === "") {
             console.log("Enter password")
             return;
         }
 
         const loginData =  await axios.post('http://localhost:3001/api/login',values)
-        console.log(loginData.data)
-        if(loginData.data.success == true){
-            console.log(loginData.data.message);
+    
+        if(loginData.data.success === true){
             navigate('/sanitaryInpection')
         }
         else{
