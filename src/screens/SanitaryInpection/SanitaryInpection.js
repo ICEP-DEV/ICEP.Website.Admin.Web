@@ -42,13 +42,6 @@ function SanitaryInpection() {
 
     function senduseSanitaryInpectionSurvey() {
 
-        console.log(SanitaryInpectionItems, true)
-
-
-        console.log(Longitude)
-        console.log(Latitude)
-
-
         axios.post("http://localhost:3001/api/sampling_data", SamplingData).then((response) => {
             SanitaryInpectionItems.samplingId = response.data.insertedId
             var coordinates = {

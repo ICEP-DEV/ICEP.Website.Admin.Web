@@ -11,7 +11,8 @@ function Level1() {
         navigate('/sanitaryInpection', {state:{temp}})
     }
     function h2s(){
-
+        var temp = samplingData[0].state.temp
+        navigate('/h2s_testing', {state:{temp}})
     }
     return(
         <div>
