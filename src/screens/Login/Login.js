@@ -5,7 +5,7 @@ import './Login.css'
 import { Link, useNavigate } from 'react-router-dom';
 //import GoogleLogin from 'react-google-login';
 import { useState } from 'react';
-//const client_id = "642282152016-vhutl900u76f6b22ifgigurkj359qtr3.apps.googleusercontent.com";
+import Loader from '../Loader/Loader';
 
 function Login() {
     let navigate = useNavigate();
@@ -13,7 +13,7 @@ function Login() {
         username: "",
         password: ""
     });
-
+    const [ButtonPopup, setButtonPopup] = useState(false);
     const handleChangeUpdate = e => {
         const { name, value } = e.target;
         setValues(prevState => ({
@@ -29,7 +29,7 @@ function Login() {
     const onSubmit = (data) => console.log(data);
 
     // set up login button using gmail account
-    const onSuccess = async() => {
+    const onSuccess = async () => {
         if (values.username === "" && values.password == "") {
             console.log("All field should be filled")
             return;
@@ -42,17 +42,24 @@ function Login() {
             console.log("Enter password")
             return;
         }
+        setButtonPopup(true)
+        const loginData = await axios.post('http://localhost:3001/api/login', values)
 
-        const loginData =  await axios.post('http://localhost:3001/api/login',values)
-    
-        if(loginData.data.success === true){
-            var userId = loginData.data.results[0].userId
+        setTimeout(() => {
+            
+            setButtonPopup(false)
+            if (loginData.data.success === true) {
+                var userId = loginData.data.results[0].userId
 
-            navigate('/sampling_data',{state:{userId}})
-        }
-        else{
-            console.log(loginData.data.message);
-        }
+                navigate('/sampling_data', { state: { userId } })
+            }
+            else {
+                console.log(loginData.data.message);
+            }
+
+
+        }, 2000);
+
 
         try {
 
@@ -60,17 +67,10 @@ function Login() {
         catch (ex) {
 
         }
-
-
-
-        
-
     }
-    const onFailure = (res) => {
-        console.log("LOGIN FAILED! res", res);
+    let displayLoader = <div>
 
-    }
-
+    </div>
 
     return (
         <div >
@@ -101,19 +101,11 @@ function Login() {
 
                             </error>
                         </small>
-
-                        <div>
-
-
-
-
-                        </div>
-
-
-
                     </div>
 
-
+                    <Loader trigger={ButtonPopup} setTrigger={setButtonPopup}>
+                        {displayLoader}
+                    </Loader>
                     <div className='d-grid'>
 
                         <button className='btn btn-dark' onClick={onSuccess}>Sign In</button>

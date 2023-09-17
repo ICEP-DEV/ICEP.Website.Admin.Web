@@ -15,7 +15,7 @@ function DataResults() {
             else if (DataAnalysis.total_avarage > 50 && DataAnalysis.total_avarage < 76) { setbackgroundColor("rgb(201, 199, 105)") }
             else { setbackgroundColor("rgba(216, 0, 0, 0.986)") }
         }
-        else {
+        else { 
             if (DataAnalysis.status == true) {
                 setbackgroundColor("rgba(216, 0, 0, 0.986)")
             }
