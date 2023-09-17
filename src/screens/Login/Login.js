@@ -1,9 +1,7 @@
 import React from 'react'
-import { useForm } from "react-hook-form";
 import axios from 'axios'
 import './Login.css'
 import { Link, useNavigate } from 'react-router-dom';
-//import GoogleLogin from 'react-google-login';
 import { useState } from 'react';
 import Loader from '../Loader/Loader';
 
@@ -24,13 +22,10 @@ function Login() {
 
     //  react hook form start here 
 
-    const { register, formState: { errors }, handleSubmit, } = useForm();
-    //for seeing the data in the console bar
-    const onSubmit = (data) => console.log(data);
 
     // set up login button using gmail account
     const onSuccess = async () => {
-        if (values.username === "" && values.password == "") {
+        if (values.username === "" && values.password === "") {
             console.log("All field should be filled")
             return;
         }
@@ -82,11 +77,7 @@ function Login() {
                         <label htmlFor='username' className='lables'>Username</label> <br />
                         <input type="username" onChange={handleChangeUpdate} name='username' value={setValues.username} placeholder='Enter Username' className='form-control' />
                         <small>
-                            <error>
-                                {errors.email?.type === "required" && "Username  is required"}
-
-
-                            </error>
+                            
                         </small>
                     </div>
 
@@ -95,11 +86,7 @@ function Login() {
                         <input type="password" onChange={handleChangeUpdate} name='password' value={setValues.password} placeholder='Enter Password' className='form-control' />
 
                         <small>
-                            <error>
-                                {errors.password?.type === "required" && "password is required"}
-                                {errors.password?.type === "pattern" && "Enter password 1 lowercase,1 Uppercase,Number,Sysmbol"}
 
-                            </error>
                         </small>
                     </div>
 

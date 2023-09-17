@@ -13,7 +13,6 @@ function H2S() {
     const [isYellowTextVisible, setIsYellowTextVisible] = useState(false);
     const [isBlackTextVisible, setIsBlackTextVisible] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
-    const [stausresults, setstausresults] = useState(null);
 
 
     const handleRadioChange = (event) => {
@@ -44,19 +43,16 @@ function H2S() {
         }
     };
     const handleButtonClick = (color) => {
-        var result = undefined
         if (color === 'Yellow') {
             setIsYellowTextVisible(!isYellowTextVisible);
             setCompletedProcessH2S('Completed 1/1');
             setIsBlackTextVisible(false);
             setSelectedOption('NEGATIVE');
-            setstausresults(false)
         } else if (color === 'Black') {
             setIsBlackTextVisible(!isBlackTextVisible);
             setCompletedProcessH2S('Completed 1/1');
             setIsYellowTextVisible(false);
             setSelectedOption('POSITIVE');
-            setstausresults(true)
         }
 
         console.log(isYellowTextVisible)

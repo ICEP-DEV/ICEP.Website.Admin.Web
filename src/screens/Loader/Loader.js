@@ -1,5 +1,4 @@
 import './Loader.css';
-import { ColorRing, Circles } from 'react-loader-spinner'
 
 function Loader(props) {
     return (props.trigger) ? (
