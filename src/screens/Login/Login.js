@@ -71,7 +71,7 @@ function Login() {
         <div >
             <div className='login template d-flex  justify-content-center align-items-center vh-100 background: #ffffff;'>
                 <div className='form_container p-5 bg-white  rounded'>
-                    <h3 className='text-center mb-5'><b>SIMRA</b></h3>
+                    <h3 className='text-center mb-5'><b>SIMRA V2</b></h3>
                     <h3 className='text-center mb-5'><b>Login here</b></h3>
                     <div className='mb-4'>
                         <label htmlFor='username' className='lables'>Username</label> <br />
