@@ -1,0 +1,31 @@
+.main {
+    display: flex;
+}
+
+.main-content-page {
+    margin: 20px;
+
+}
+
+/*===================================================================*/
+.dash-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dash-header-info {
+    text-align: center;
+}
+
+#dash-nav{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inner-dash-nav{
+    margin: 15px;
+}
+
+.stats{
+    padding-left: 10px;
+}
