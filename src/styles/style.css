@@ -7,6 +7,10 @@
 
 }
 
+.group-form{
+    margin: 20px;
+}
+
 /*===================================================================*/
 .dash-header {
     display: flex;
@@ -28,4 +32,42 @@
 
 .stats{
     padding-left: 10px;
+}
+
+
+/******************************************************************************/
+#form-dates{
+    display: flex;
+}
+
+.form-date{
+    margin: 10px 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-inputdate{
+    width: 250px;
+}
+
+.form-campus{
+    display: flex;
+    flex-direction: column;
+}
+
+.checkCampus{
+    margin-right: 5px;
+}
+
+.checkCampusLabel{
+    margin-right: 20px;
+}
+
+.dateTime{
+    display: flex;
+}
+
+.dateTime select{
+    margin-left: 10px;
+    width: 80px;
 }
