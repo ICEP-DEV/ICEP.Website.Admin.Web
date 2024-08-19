@@ -366,9 +366,8 @@ function Dashboard() {
                                 <label >Edit</label>&emsp;
                                 <label >Delete</label>
                             </>
-
                             }
-                            
+
                         </Card.Body>
                     ))}
 
