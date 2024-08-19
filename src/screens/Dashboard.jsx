@@ -372,11 +372,7 @@ function Dashboard() {
                 </Card>
             </div>
         </div>
-
-
     </div>)
-
-
 }
 
 export default Dashboard;
