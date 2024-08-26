@@ -6,17 +6,17 @@ function Sidebar() {
 
     return (<div id="sidebar">
         <div id="sidebar-head">
-            <img src={logo} alt="icep logo" width="50px" height="50px" style={{borderRadius:"100%"}}/>
-            <h4 style={{marginTop:"15px", marginLeft:"15px"}}>ICEP</h4>
+            <img src={logo} alt="icep logo" width="50px" height="50px" style={{ borderRadius: "100%" }} />
+            <h4 style={{ marginTop: "15px", marginLeft: "15px" }}>ICEP</h4>
         </div>
         <div id="sidebar-content">
             <div className="side-content">
                 <span className="side-icon"> <BsSpeedometer size={25} /></span>
-                <span className="side-label"><h5>Dashborad</h5></span>
+                <span className="side-label"><Link to='/'><h5>Dashborad</h5></Link></span>
             </div>
             <div className="side-content">
                 <span className="side-icon"> <BsBookFill size={25} /></span>
-                <span className="side-label"><h5>Applications</h5></span>
+                <span className="side-label"><Link to='/applicants'><h5>Applications</h5></Link></span>
             </div>
             <div className="side-content">
                 <span className="side-icon"> <BsPeopleFill size={25} /></span>
